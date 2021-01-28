@@ -1,0 +1,7 @@
+*.jar
+*.MF
+*.txt
+.gradle
+**/build/
+!src/**/build/
+detekt

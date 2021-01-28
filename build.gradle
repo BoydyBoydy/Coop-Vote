@@ -1,0 +1,36 @@
+buildscript {
+	ext.kotlin_version = '1.4.21'
+}
+
+plugins {
+    // install Kotlin JVM gradle plugin
+    id 'org.jetbrains.kotlin.jvm' version '1.4.21'
+    // install code linter
+    id("io.gitlab.arturbosch.detekt").version("1.9.1")
+}
+ 
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // include Kotlin standard library
+	implementation "org.jetbrains.kotlin-stdlib:$kotlin_version"
+
+    // include JUnit 5 assertions
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.2.0'
+
+    // include JUnit 5 test engine
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.2.0'
+}
+ 
+test {
+    useJUnitPlatform()
+}
+
+// set JVM target to 1.8 for all compilation tasks
+tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
