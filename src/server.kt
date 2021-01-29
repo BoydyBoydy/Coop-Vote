@@ -89,5 +89,4 @@ class Calculator {
     private fun div(a: Double, b: Double): Double = a / b
     private fun multi(a: Int, b: Int): Int = a * b
 
-
 }

@@ -8,3 +8,6 @@ echo "Building Completed"
 
 echo "Running Static Analysis..."
 ./detekt
+
+echo "Running Style Guide"
+ktlint
